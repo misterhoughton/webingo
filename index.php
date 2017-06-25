@@ -46,7 +46,7 @@
 		width: 400px;
 		margin: 0;
 		padding: 0;
-		border: 5px solid #0087FF;
+		border: 5px solid #000;
 		font-family: 'Anonymous Pro', monospace;
 	}
 	ul.grid li {
@@ -56,14 +56,14 @@
 		width: 80px;
 		height: 80px;
 		padding-top: 1.15em;
-		border: 1px solid #0087FF;
+		border: 1px solid #000;
 	}
 	ul.grid li.got {
 		background-color: #0087FF;
+		color: #fff;
 	}
 	ul.grid li.webingo {
-		background-color: #F44336;
-		border-color: #F44336; 	
+		background-color: #4CAF50;
 	}
 	.status {
 		min-height: 1.15em;
@@ -71,10 +71,8 @@
 	}
 	</style>
 </head>
-<body>
-		
+<body>	
 	<h1>WEBINGO!</h1>
-
 	<ul class="grid">
 		<li></li>
 		<li></li>

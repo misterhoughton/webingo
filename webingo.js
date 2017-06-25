@@ -1,14 +1,14 @@
-var firstNames = ['spider', 'soap', 'bill', 'credit', 'fish', 'duck', 'night', 'vision', 'love', 'news', 'relaxation', 'fun', 'dining', 'elevator', 'shopping', 'pasta', 'aspiration', 'donut'];
+var firstNames = ['spider', 'soap', 'bill', 'credit', 'fish', 'duck', 'night', 'vision', 'love', 'cash', 'relaxation', 'fun', 'dining', 'elevator', 'shopping', 'pasta', 'aspiration', 'donut'];
     dividers = ['', '-'];
-    secondNames = ['trap', 'head', 'search', 'finder', 'master', 'helper', 'brain', 'news', 'hire', 'expert', 'guru', 'revenge', 'rodeo', 'care', 'cakes', 'gent', 'lady', 'crater'],
+    secondNames = ['tank', 'barn','trap', 'head', 'search', 'finder', 'master', 'helper', 'brain', 'news', 'hire', 'expert', 'guru', 'revenge', 'rodeo', 'care', 'cakes', 'gent', 'lady', 'crater'],
+	responseCodes = ['200', '400', '404', '403', '302', '301', '500','000'],
     webingoCount = [],
     $getSiteBtn = $('button'),
     $statusMsg = $('#status');
 
 function initBoard() {
-	var codes = ['200', '400', '404', '403', '302', '301', '500','000'];
 	$.each($('ul.grid li'), function () {
-		$(this).text(getRandomItem(codes));
+		$(this).text(getRandomItem(responseCodes));
 	});
 }
 
@@ -56,7 +56,9 @@ function getUrlStatus(url) {
   		context: document.body,
   		timeout: 3000,
   		error: function (e) {
-			printStatus('Took too long...try again');
+  			var randomCode = getRandomItem(responseCodes);
+  			checkBoard(randomCode);
+			printStatus('Took too long...have a ' + randomCode);
 			$getSiteBtn.prop('disabled', false);
   		}
 
