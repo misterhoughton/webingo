@@ -1,6 +1,6 @@
-var firstNames = ['bill', 'credit', 'fish', 'duck', 'night', 'vision', 'love', 'news', 'relaxation', 'fun', 'dining', 'elevator', 'shopping', 'pasta', 'aspiration', 'donut'];
+var firstNames = ['spider', 'soap', 'bill', 'credit', 'fish', 'duck', 'night', 'vision', 'love', 'news', 'relaxation', 'fun', 'dining', 'elevator', 'shopping', 'pasta', 'aspiration', 'donut'];
     dividers = ['', '-'];
-    secondNames = ['head', 'search', 'finder', 'master', 'helper', 'brain', 'news', 'hire', 'expert', 'guru', 'revenge', 'rodeo', 'care', 'cakes', 'gent', 'lady', 'crater'],
+    secondNames = ['trap', 'head', 'search', 'finder', 'master', 'helper', 'brain', 'news', 'hire', 'expert', 'guru', 'revenge', 'rodeo', 'care', 'cakes', 'gent', 'lady', 'crater'],
     webingoCount = [],
     $getSiteBtn = $('button'),
     $statusMsg = $('#status');
@@ -112,6 +112,7 @@ function checkForLines() {
 					$squares.eq(webingoIndex).addClass('webingo');
 				});
 				webingoCount.push[true];
+				$('h1').addClass('webingo');
 			}
 			if(webingoCount.length > 0) {
 				console.log(webingoCount);

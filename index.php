@@ -18,10 +18,16 @@
 		font-weight: normal;
 		font-size: 2.75em;
 	}
+	h1.webingo {
+		animation: blinker .25s linear infinite;
+	}
+	@keyframes blinker {  
+		50% { opacity: 0; }
+	}
 	button {
 		margin: .75em auto;
 		padding: .5em;
-		border: 1px solid;
+		border: none;
 		cursor: pointer;
 		background-color: #0087FF;
 		color: #fff;
@@ -40,7 +46,7 @@
 		width: 400px;
 		margin: 0;
 		padding: 0;
-		border: 5px solid #ccc;
+		border: 5px solid #0087FF;
 		font-family: 'Anonymous Pro', monospace;
 	}
 	ul.grid li {
@@ -50,13 +56,14 @@
 		width: 80px;
 		height: 80px;
 		padding-top: 1.15em;
-		border: 1px solid #ccc;
+		border: 1px solid #0087FF;
 	}
 	ul.grid li.got {
-		background-color: #ccc;	
+		background-color: #0087FF;
 	}
 	ul.grid li.webingo {
-		background-color: red;
+		background-color: #F44336;
+		border-color: #F44336; 	
 	}
 	.status {
 		min-height: 1.15em;
