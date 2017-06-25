@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Webingo!</title>
-	<link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Lato:300|Anonymous+Pro" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Lato:300,800|Anonymous+Pro|Montserrat:900" rel="stylesheet">
 	<style>
 	body {
 		margin: 2em 10%;
@@ -20,9 +20,6 @@
 	}
 	h1.webingo {
 		animation: blinker .25s linear infinite;
-	}
-	@keyframes blinker {  
-		50% { opacity: 0; }
 	}
 	button {
 		margin: .75em auto;
@@ -63,11 +60,35 @@
 		color: #fff;
 	}
 	ul.grid li.webingo {
-		background-color: #4CAF50;
+		background-color: #F44336;
 	}
 	.status {
 		min-height: 1.15em;
 		font-family: 'Anonymous Pro', monospace;
+	}
+	.winMsg {
+		opacity: 0;
+		position: absolute;
+		transition: all .2s ease-in-out;
+		left: 0;
+		top: 5em;
+		width: 100%;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 2em;
+		font-weight: 800;
+		text-align: center;
+	}
+	.winMsg.show {
+		transform: scale(2);
+		animation: grow .75s linear;
+	}
+
+	@keyframes blinker {  
+		50% { opacity: 0; }
+	}
+	@keyframes grow {  
+		0% { opacity: 1; }
+		100% {opacity: 0;}
 	}
 	</style>
 </head>
@@ -79,11 +100,13 @@
 		<li></li>
 		<li></li>
 		<li></li>
+		
 		<li></li>
 		<li></li>
 		<li></li>
 		<li></li>
 		<li></li>
+
 		<li></li>
 		<li></li>
 		<li></li>
@@ -93,8 +116,8 @@
 
 	<h2 id="message"></h3>
 	<p id="status" class="status"></p>
-
-	<button id="" type="button">Hit me!</button>
+	<p id="winMsg" class="winMsg">YAY!</p>
+	<button id="" type="button"></button>
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="webingo.js"></script>
 </body>

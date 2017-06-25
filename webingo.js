@@ -1,13 +1,23 @@
-var firstNames = ['spider', 'soap', 'bill', 'credit', 'fish', 'duck', 'night', 'vision', 'love', 'cash', 'relaxation', 'fun', 'dining', 'elevator', 'shopping', 'pasta', 'aspiration', 'donut'];
+var firstNames = ['moon', 'top', 'spider', 'soap', 'bill', 'credit', 'fish', 'duck', 'night', 'vision', 'love', 'cash', 'relaxation', 'fun', 'dining', 'elevator', 'shopping', 'pasta', 'aspiration', 'donut'];
     dividers = ['', '-'];
-    secondNames = ['tank', 'barn','trap', 'head', 'search', 'finder', 'master', 'helper', 'brain', 'news', 'hire', 'expert', 'guru', 'revenge', 'rodeo', 'care', 'cakes', 'gent', 'lady', 'crater'],
+    secondNames = ['world', 'tank', 'barn','trap', 'head', 'search', 'finder', 'master', 'helper', 'brain', 'news', 'hire', 'expert', 'guru', 'revenge', 'rodeo', 'care', 'cakes', 'gent', 'lady', 'crater'],
 	responseCodes = ['200', '400', '404', '403', '302', '301', '500','000'],
-    webingoCount = [],
+    webingoCount = 0,
+    $title = $('h1'),
     $getSiteBtn = $('button'),
+    $winMsg = $('#winMsg'),
     $statusMsg = $('#status');
 
-function initBoard() {
+function initGame() {
 	$.each($('ul.grid li'), function () {
+		var $this = $(this);
+		// Cleardown:
+		if ($this.hasClass('got')) $this.removeClass('got');
+		if ($this.hasClass('webingo')) $this.removeClass('webingo');
+		if ($winMsg.hasClass('show')) $winMsg.removeClass('show');
+		// Set up:
+		webingoCount = 0;
+		$getSiteBtn.text('Hit me!');
 		$(this).text(getRandomItem(responseCodes));
 	});
 }
@@ -113,12 +123,15 @@ function checkForLines() {
 					webingoIndex = array[i];
 					$squares.eq(webingoIndex).addClass('webingo');
 				});
-				webingoCount.push[true];
-				$('h1').addClass('webingo');
+				webingoCount++;
+				if (!$title.hasClass('webingo')) {
+					$title.addClass('webingo');
+				}
+				$getSiteBtn.text('Go again?');
 			}
-			if(webingoCount.length > 0) {
-				console.log(webingoCount);
-				console.log('WEBINGO x ' + webingoCount.length);
+			if(webingoCount > 0) {
+				$winMsg.text('WEBINGO x ' + webingoCount);
+				$winMsg.addClass('show');
 			}
 		};
 
@@ -130,13 +143,18 @@ function checkForLines() {
 
 $(function(){
 
-    initBoard();
+    initGame();
 
 	$getSiteBtn.on('click keypress', function () {
 		$statusMsg.text('');
+		if(webingoCount > 0) {
+    		$title.removeClass('webingo')
+    		initGame();
+		}	else {
+			var url_for_checking = generateName();
+			printUrl(url_for_checking);
+			getUrlStatus(url_for_checking);
+		}
 
-		var url_for_checking = generateName();
-		printUrl(url_for_checking);
-		getUrlStatus(url_for_checking);
 	})
 });
