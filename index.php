@@ -7,6 +7,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Lato:300,800|Anonymous+Pro|Montserrat:900" rel="stylesheet">
 	<style>
 	body {
+		overflow-x: hidden; 
 		margin: 2em 10%;
 		text-align: center;
 		font-size: 1.5em;
@@ -65,21 +66,21 @@
 	.status {
 		min-height: 1.15em;
 		font-family: 'Anonymous Pro', monospace;
+		color: #4CAF50;
 	}
 	.winMsg {
 		opacity: 0;
 		position: absolute;
 		transition: all .2s ease-in-out;
-		left: 0;
-		top: 5em;
-		width: 100%;
+		left: 43%;
+		top: 10em;
 		font-family: 'Montserrat', sans-serif;
-		font-size: 2em;
+		font-size: 1em;
 		font-weight: 800;
 		text-align: center;
 	}
 	.winMsg.show {
-		transform: scale(2);
+		transform: scale(3);
 		animation: grow .75s linear;
 	}
 
@@ -116,7 +117,7 @@
 
 	<h2 id="message"></h3>
 	<p id="status" class="status"></p>
-	<p id="winMsg" class="winMsg">YAY!</p>
+	<p id="winMsg" class="winMsg">WEBINGO x 3</p>
 	<button id="" type="button"></button>
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="webingo.js"></script>

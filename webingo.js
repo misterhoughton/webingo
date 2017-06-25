@@ -1,23 +1,27 @@
-var firstNames = ['moon', 'top', 'spider', 'soap', 'bill', 'credit', 'fish', 'duck', 'night', 'vision', 'love', 'cash', 'relaxation', 'fun', 'dining', 'elevator', 'shopping', 'pasta', 'aspiration', 'donut'];
+var firstNames = ['auto', 'shoe', 'stationery', 'furniture', 'clothing', 'moon', 'top', 'spider', 'soap', 'bill', 'credit', 'fish', 'duck', 'night', 'vision', 'love', 'cash', 'relaxation', 'fun', 'dining', 'elevator', 'shopping', 'pasta', 'aspiration', 'donut', 'liquor'];
     dividers = ['', '-'];
-    secondNames = ['world', 'tank', 'barn','trap', 'head', 'search', 'finder', 'master', 'helper', 'brain', 'news', 'hire', 'expert', 'guru', 'revenge', 'rodeo', 'care', 'cakes', 'gent', 'lady', 'crater'],
+    secondNames = ['shed', 'warehouse', 'shop', 'world', 'king', 'barn', 'trap', 'head', 'search', 'finder', 'master', 'helper', 'brain', 'news', 'hire', 'expert', 'guru', 'catalogue', 'rodeo', 'care', 'cakes', 'gent', 'lady', 'central', 'hut', 'spot', 'hutch', 'sale'],
 	responseCodes = ['200', '400', '404', '403', '302', '301', '500','000'],
     webingoCount = 0,
     $title = $('h1'),
     $getSiteBtn = $('button'),
+    $msg = $('#message'),
     $winMsg = $('#winMsg'),
     $statusMsg = $('#status');
 
 function initGame() {
+	webingoCount = 0;
+	$msg.text('Hit up a random site');
+	$getSiteBtn.text('Go!');
+	printStatus('Press \'Go!\' to begin');
+	
 	$.each($('ul.grid li'), function () {
 		var $this = $(this);
-		// Cleardown:
+		// Clear down:
 		if ($this.hasClass('got')) $this.removeClass('got');
 		if ($this.hasClass('webingo')) $this.removeClass('webingo');
 		if ($winMsg.hasClass('show')) $winMsg.removeClass('show');
 		// Set up:
-		webingoCount = 0;
-		$getSiteBtn.text('Hit me!');
 		$(this).text(getRandomItem(responseCodes));
 	});
 }
@@ -45,7 +49,7 @@ function generateName() {
 }
 
 function printUrl(str) {
-	$('#message').text(str);
+	$msg.text(str);
 }
 
 function printStatus(str) {
