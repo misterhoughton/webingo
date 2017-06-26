@@ -1,4 +1,4 @@
-var firstNames = ['auto', 'shoe', 'stationery', 'furniture', 'clothing', 'moon', 'top', 'spider', 'soap', 'bill', 'credit', 'fish', 'duck', 'night', 'vision', 'love', 'cash', 'relaxation', 'fun', 'dining', 'elevator', 'shopping', 'pasta', 'aspiration', 'donut', 'liquor'];
+var firstNames = ['auto', 'shoe', 'stationery', 'furniture', 'clothing', 'moon', 'top', 'spider', 'soap', 'bill', 'credit', 'fish', 'duck', 'night', 'vision', 'love', 'cash', 'relaxation', 'fun', 'dining', 'elevator', 'shopping', 'pasta', 'aspiration', 'donut', 'liquor'],
     dividers = ['', '-'];
     secondNames = ['shed', 'warehouse', 'shop', 'world', 'king', 'barn', 'trap', 'head', 'search', 'finder', 'master', 'helper', 'brain', 'news', 'hire', 'expert', 'guru', 'catalogue', 'rodeo', 'care', 'cakes', 'gent', 'lady', 'central', 'hut', 'spot', 'hutch', 'sale'],
 	responseCodes = ['200', '400', '404', '403', '302', '301', '500','000'],

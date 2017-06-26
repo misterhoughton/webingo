@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<title>Webingo!</title>
 	<link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Lato:300,800|Anonymous+Pro|Montserrat:900" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
 	body {
 		overflow-x: hidden; 
@@ -72,7 +73,8 @@
 		opacity: 0;
 		position: absolute;
 		transition: all .2s ease-in-out;
-		left: 43%;
+		left: 0;
+		right: 0;
 		top: 10em;
 		font-family: 'Montserrat', sans-serif;
 		font-size: 1em;
@@ -80,7 +82,7 @@
 		text-align: center;
 	}
 	.winMsg.show {
-		transform: scale(3);
+		transform: scale(5);
 		animation: grow .75s linear;
 	}
 
